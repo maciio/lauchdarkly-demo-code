@@ -15,11 +15,11 @@
     // so that subsequent visits obtain the same flag variation
     var user = { anonymous: true };
     // Obtain a client-side ID from https://app.launchdarkly.com/settings/projects
-    var ldclient = window.LDClient.initialize("change_me", user);
+    var ldclient = window.LDClient.initialize("change_me_id_client", user);
     
     // Wait for client to initialize, before checking flag variations
     ldclient.on("ready", function() {
-      document.getElementById("flag").innerHTML = ldclient.variation("change_me", false);      
+      document.getElementById("flag").innerHTML = ldclient.variation("flag_name", false);
     });
     
     // Listen for changes to the flag. Update in realtime when it changes.
